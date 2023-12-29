@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Garage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" type="text/css" href="parking-style.css">
+  <script src="jquery-3.6.4.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      function updateParkingStatus() {
+        $.ajax({
+          url: '/getParkingStatus',
+          type: 'GET',
+          success: function(data) {
+            updateCarClasses(data);
+          },
+          error: function(error) {
+            console.error('Error fetching parking status:', error);
+          }
+        });
+      }
+
+      function updateCarClasses(data) {
+        // Update car classes based on the received data
+        for (var carId in data) {
+          $('#' + carId).removeClass().addClass(data[carId]);
+        }
+
+        // Update available parking count
+        var availableParking = data.noAv || 0;
+        $('#noAv').text(availableParking + ' Available Parking');
+      }
+
+      setInterval(updateParkingStatus, 1000); 
+    });
+  </script>
+</head>
+<body>
+  <h1 class="main-title">Smart Garage</h1>
+  <div class="main-div"> 
+    <div class="available">
+      <p id="noAv">%noAv% Available Parking</p>
+    </div>
+    <div class="my-content">
+      <div id="car4" class="%car4%"></div>
+      <div id="car3" class="%car3%"></div>
+      <div id="car2" class="%car2%"></div>
+      <div id="car1" class="%car1%"></div>
+    </div>
+  </div>
+  <footer>
+    <h3 style="padding-bottom: 0px; margin-bottom: 5px;">Smart Garage</h3>
+    <p style="font-size: 15px; padding: 10px;">Discover the future of smart living with our proudly designed IoT application and system, revolutionizing convenience through an automated garage system.</p>
+    <p style="font-size: 15px; color: rgb(99, 99, 99); background-color: black; padding: 5px;">© 2023 Smart Garage. All rights reserved.</p>
+  </footer>
+</body>
+</html>

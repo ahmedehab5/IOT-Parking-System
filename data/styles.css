@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #00262f;
+    text-align: center;
+  }
+  
+  .smart-block {
+    background-color: #00607d;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+  }
+
+  .controls{
+    margin-top: 30px;
+  }
+  
+  .status {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .button2 {
+    background-color: #172039;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+    .button1 {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  #day-night {
+    margin: 10px;
+    font-weight: bold;
+    color: #e1e1e1;
+  }
+  
+  #available-parkings, #nearest-object {
+    margin: 10px;
+    color: #172039;
+  }
+  
+  footer{
+    position: absolute;
+    bottom: 0px;
+    background: #111;
+    height: auto;
+    width: 100vw;
+    color: #fff;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-content p{
+    max-width: 500px;
+    font-size: 14px;
+    color: #cacdd2;
+}
+
+.main-title{
+  font-size: 18px;
+  color: #8d8d8d;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #282828;
+  letter-spacing: 6px;
+  margin: 0px;
+  padding: 2vh;
+}
